@@ -1,0 +1,393 @@
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* First font family */
+    font-size: 16px;
+    line-height: 1.6;
+    letter-spacing: 0.5px; /* Letter spacing */
+}
+
+header {
+    background-color: #333;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
+}
+
+.logo img {
+    height: auto;
+    max-height: 50px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+    nav ul li {
+        display: inline-block; /* Display list items inline */
+        margin: 0 10px;
+    }
+
+        nav ul li a {
+            text-decoration: none;
+            color:aliceblue;
+            font-family: 'Verdana', sans-serif; /* Second font family */
+            position: relative;
+        }
+
+            nav ul li a:after {
+                content: '';
+                display: block;
+                height: 2px;
+                width: 0;
+                background-color: #00cc00;
+                position: absolute;
+                bottom: -2px;
+                left: 50%;
+                transform: translateX(-50%); /* Center the pseudo-element */
+                transition: width 0.3s ease;
+            }
+
+            nav ul li a:hover:after {
+                width: 100%;
+            }
+
+/*Header Ends Here */
+
+
+/*Main Page Style */
+
+
+main {
+    padding: 20px;
+}
+
+
+/* Additional styles for the hero section */
+.hero {
+    text-align: center;
+    padding: 100px 0;
+    background-image: url('back.jpg'); 
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    }
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+    .btn:hover {
+        background-color: #555; /* Adjust hover background color as needed */
+    }
+
+/* Additional styles for the quality and services section */
+.quality-services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 50px 0;
+}
+
+.card {
+    width: 300px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+    .card img {
+        width: 100%;
+        height: auto;
+    }
+
+.card-content {
+    padding: 20px;
+}
+
+    .card-content h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .card-content p {
+        font-size: 16px;
+    }
+
+
+/* About page style */
+
+.about-page {
+    display: flex;
+    flex-wrap: wrap; 
+    align-items: center;
+    justify-content: space-around;
+    padding: 50px 20px; /* Adjust padding for smaller screens */
+}
+
+.about-content {
+    flex: 1 1 100%; /* Take up full width on smaller screens, 50% on larger screens */
+    max-width: 600px; /* Limit maximum width of the content */
+    margin-bottom: 20px;
+}
+
+    .about-content h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .about-content p {
+        text-align: justify;
+    }
+
+.about-image {
+    flex: 1 1 100%;
+    max-width: 400px; /* Limit maximum width of the image */
+}
+
+    .about-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        transition: transform 0.3s ease; /* Add transition for smooth animation */
+    }
+
+/* Adjustments for smaller screens */
+@media screen and (min-width: 768px) {
+    .about-content {
+        flex: 1;
+        max-width: 50%;
+    }
+
+    .about-image {
+        flex: 1;
+        max-width: 45%;
+    }
+}
+
+
+
+
+
+
+
+/* Additional styles for the product showcase */
+.product-showcase {
+    text-align: center;
+    padding: 50px 0;
+}
+
+    .product-showcase h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjusted for responsiveness */
+    grid-gap: 20px;
+    justify-content: center;
+    align-items: flex-start; /* Align items to the start of the container */
+}
+
+.product-item {
+    width: 100%; /* Full width for each product item */
+    max-width: 300px; /* Maximum width for better readability */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Align text to the left */
+}
+
+    .product-item img {
+        width: 100%;
+        max-width: 100%; /* Adjusted max-width value */
+        height: 280px;
+        margin-bottom: 15px;
+        border-radius: 5px; /* Rounded corners for images */
+    }
+
+@media (min-width: 768px) {
+    .product-item {
+        max-width: none; /* Reset max-width for larger screens */
+    }
+}
+
+
+    .product-item:hover img {
+        transform: scale(1.1); /* Scale up the image on hover */
+    }
+
+.product-details h3 {
+    font-size: 18px; /* Adjusted font size */
+    margin-bottom: 10px;
+}
+
+.product-details p {
+    font-size: 14px; /* Adjusted font size */
+    margin-bottom: 10px;
+}
+
+.product-details .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+    .product-details .btn:hover {
+        background-color: #555;
+    }
+
+/* product style end */
+
+
+/* Contact style start */
+
+.contact-section {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    button[type="submit"]:hover {
+        background-color: #555;
+    }
+.message {
+    margin-top: 20px;
+    color: #666;
+}
+
+/* Contact style  end */
+
+
+
+/* Footer style  start */
+footer {
+    background-color: #333;
+    color: aliceblue;
+    padding: 20px 0;
+}
+
+.footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-section {
+    flex: 1 1 300px; /* Each section takes up equal space with a minimum width of 300px */
+    margin: 20px;
+    text-align: center;
+}
+
+.footer-bottom {
+    background-color:black;
+    color:white;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-section img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px; /* Add some space below the logo */
+}
+
+@media screen and (max-width: 768px) {
+    .footer-section {
+        flex-basis: 100%; /* Each section takes up full width on smaller screens */
+    }
+}
+
+
+
+
+
+
+
+
+   
